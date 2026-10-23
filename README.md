@@ -42,11 +42,13 @@
 
 ### 5. Project Preparation
 
-- [프로젝트 평가 기준 소개](./project_materials/6_Project_Evaluation.md)
+- [프로젝트 진행을 위한 코드 소개](./project_materials/5_Project_Preparation.md)
 
 ### 이후. 팀별 프로젝트 진행
 
-- [프로젝트 진행을 위한 코드 소개](./project_materials/5_Project_Preparation.md)
+#### 평가 기준
+
+- [프로젝트 평가 기준 소개](./project_materials/6_Project_Evaluation.md)
 
 ---
 > 수업 자료는 `project_materials/` 폴더에서도 확인 가능합니다.
