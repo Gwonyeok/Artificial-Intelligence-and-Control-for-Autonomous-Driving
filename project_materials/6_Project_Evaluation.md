@@ -379,6 +379,7 @@ Merge / Diverge
 
 - 예시 자료 1: <https://park-sangeun.github.io/Multi-Square/>
 - 예시 자료 2: <https://9hyeon1225.github.io/van/>
+- 예시 자료 3: <https://9hyeon1225.github.io/LAC/>
 
 ### 2) 코드
 
@@ -399,6 +400,7 @@ Data Collection
 
 - 예시 자료 1: <https://github.com/park-sangeun/Multi-Square>
 - 예시 자료 2: <https://github.com/9hyeon1225/van>
+- 예시 자료 3: <https://github.com/9hyeon1225/LAC>
 
 ### 3) 보고서
 
