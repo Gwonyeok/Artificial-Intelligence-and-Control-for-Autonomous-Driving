@@ -50,5 +50,6 @@
 
 - [프로젝트 평가 기준 소개](./project_materials/6_Project_Evaluation.md)
 
+- [동료 평가 표](https://docs.google.com/document/d/1czmE5ofrKckau2rMwK4-wXax-f5QrUia/edit?usp=sharing&ouid=107893289049883287038&rtpof=true&sd=true)
 ---
 > 수업 자료는 `project_materials/` 폴더에서도 확인 가능합니다.
