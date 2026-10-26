@@ -468,7 +468,11 @@ Data Collection
 
 프로젝트에서 수집한 주행 데이터를 Hugging Face에 업로드 후 링크 제출
 
-중간 발표 이후 데이터 칼럼 scope 제한 예정
+- 제공된 데이터 수집 기본 코드에서 수집하는 데이터 항목은 반드시 포함해야 함
+- 구축한 도로 환경에 맞게 추가 항목에 대해 수집하는 것 허용
+  - 중간 발표 이후 데이터 칼럼 scope 제한 예정
+
+%%%%%%%%%%%% 여기에 데이터 칼럼 표 첨부 부탁
 
 - 예시 자료 1: <https://huggingface.co/datasets/sangeun-park/Multi-Square>
 
