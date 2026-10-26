@@ -472,7 +472,44 @@ Data Collection
 - 구축한 도로 환경에 맞게 추가 항목에 대해 수집하는 것 허용
   - 중간 발표 이후 데이터 칼럼 scope 제한 예정
 
-%%%%%%%%%%%% 여기에 데이터 칼럼 표 첨부 부탁
+### 기본 데이터 수집 항목
+
+제공된 `collect_pomdp_data.py`에서는 **POMDP transition 단위**로 데이터를 저장하며, 기본적으로 다음 항목을 포함함
+
+| 항목 | 형태 | 의미 |
+|---|---|---|
+| `episode` | Integer | Episode 번호 |
+| `t` | Integer | Episode 내부 timestep |
+| `observation` | Vector (19-dim) | 시점 $t$에서 AV Policy가 실제로 입력받는 부분 관측 $o_t$ |
+| `action_raw` | Vector (2-dim) | Policy가 출력한 원본 Action `[가감속, 차선변경]` |
+| `action.accel_raw` | Float | 환경에 전달된 가감속 Action 값 |
+| `action.lane_change_raw` | Float | 환경에 전달된 차선변경 raw 값 |
+| `action.lane_change` | Integer | 실제 명령으로 변환된 차선변경 값 `{-1, 0, +1}` |
+| `action.lane_change_applied` | Boolean | 차선변경 명령이 실제 적용되었는지 여부 |
+| `reward` | Float | 시점 $t$에서 받은 Reward $r_t$ |
+| `terminated` | Boolean | 충돌 / 도착 등 환경 자체의 종료 여부 |
+| `truncated` | Boolean | 최대 Episode Step 등 시간 제한에 의한 종료 여부 |
+| `state` | Dictionary | SUMO 내부의 privileged simulator state $s_t$ |
+| `detected_vehicles` | List | Observation 시점에 감지된 주변 차량 정보 |
+| `event.collided` | Boolean | 해당 step에서 충돌 발생 여부 |
+| `event.arrived` | Boolean | 목적지 도착 여부 |
+| `event.lane_before` | Integer / String | Action 적용 전 AV 차선 |
+| `event.lane_after` | Integer / String | Action 적용 후 AV 차선 |
+| `next_observation` | Vector (19-dim) | 다음 시점의 부분 관측 $o_{t+1}$ |
+| `next_state` | Dictionary | 다음 시점의 privileged simulator state $s_{t+1}$ |
+
+> `next_observation`과 `next_state`는 저장 용량을 줄이기 위해 JSONL 파일에서는 Episode 마지막 step에만 직접 기록하며, 데이터를 읽을 때 다음 transition의 `observation`과 `state`를 이용하여 복원 가능
+
+또한 학습에서 바로 사용하기 쉽도록 `.npz` 파일에는 다음 항목을 별도로 저장함
+
+```text
+observation / action_raw / lane_change / reward / next_observation
+terminated / truncated / episode / t
+detected_xy / detected_offsets
+```
+
+> **위 기본 데이터 항목은 반드시 포함해야 하며, 각 팀의 도로 구조와 자율주행 문제에 필요한 추가 State / Observation 항목은 자유롭게 확장 가능**
+
 
 - 예시 자료 1: <https://huggingface.co/datasets/sangeun-park/Multi-Square>
 
